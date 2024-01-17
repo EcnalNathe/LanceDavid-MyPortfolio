@@ -1,0 +1,561 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>My Portfolio</title>
+    
+    <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppinns', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+                box-sizing: border-box;
+            }
+            
+            html{
+                scroll-behavior: smooth;
+            
+            }
+
+            body{
+                background: #080808; 
+                color: #fff;
+                
+            }
+
+            #header{
+                width: 100%;
+                height: 100vh;
+                background-image:url(pain4.jpg);
+                background-size: cover;
+                background-position: center ;
+                
+                
+            
+            }
+        .container{
+            padding: 10px 10%;
+            margin-top:50px;
+        }
+
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap     ;
+            }
+
+            .logo{
+                width: 150px;
+            margin-top: 5px;
+            padding: 1px;
+                
+            }
+
+            nav ul li{
+                display: inline-block;
+            list-style: none;
+            margin: 10px    20px;        
+            }
+            
+            nav ul li a{
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+                position: relative;
+            }
+
+            nav ul li a::after{
+                content: '';
+                width: 0;
+                height: 3px;
+                background:plum;
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                transition: 0.5s;
+            }
+
+            nav ul li a:hover::after{
+                width: 100%;
+            }
+
+            .header-text{
+                margin-top: 20%;
+                font-size: 30px;
+            }
+
+            .header-text h1{
+                font-size: 60px;
+                margin-top: 20px;
+            }
+
+            .header-text h1 span{
+                color: plum;
+            }
+        /*  <!------------about--------------->  */
+
+        #about{
+            padding:80px 0 ;
+            color: white;
+        }
+
+        .row{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+        }
+
+        
+
+        .about-col-1{
+            flex-basis: 38%;
+        }
+
+        .about-col-1 img{
+            width: 90%;
+            border-radius: 15px;
+        }
+
+        .about-col-2{
+            flex-basis: 60%;
+        
+        }
+
+        .subtitle{
+            font-size: 60px;
+            font-weight: 600;
+            color: white;
+            
+        }
+
+        .tab-titles{
+            display:flex;
+            margin: 20px 0 40px;
+            margin-top: 30px;
+        }
+
+        .tab-links{
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;   
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #9328ad;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-links.active-link::after{
+            width: 50%;
+        }
+
+        .tab-contents ul li{
+            list-style: none;
+            margin:10px 0;
+        }
+
+        .tab-contents ul li span{
+            color: plum;
+            font-size: 14px;
+        }
+
+        .tab-contents{
+            display: none;
+        }
+
+        .tab-contents.active-tab{
+            display: block;
+        }
+
+        /*----------portfolio-------------*/
+
+            #portfolio{
+                padding: 50px 0;
+
+            }
+
+            .work-list{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-gap: 40px;
+                margin-top: 50px;
+            }
+
+            .work{
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .work img{
+                width: 100%;
+                border-radius: 10px;
+                display: block;
+                transition: transform 0.5s;
+            }
+
+            .layer{  
+                width: 100%;
+                height: 0%;
+            background: linear-gradient(rgba(0,0,0,0.6), plum);
+                border-radius: 10px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 40px;
+                text-align: center;
+                font-size: 15px;
+                transition: height 0.5s;
+            }
+        
+
+            .layer h3{
+                font-weight: 500;
+            margin-bottom: 20px;
+            
+            }
+
+            .layer a{
+                margin-top: 20px;
+                    color: black;
+                    text-decoration: none;
+                    font-size: 18px;
+                    line-height: 60px;
+                    background: #fff;
+                    width: 60px;
+                    height: 60px;
+                    border-radius:  50%;
+                text-align: center;
+            }
+
+            .work:hover img{
+                transform: scale(1.1);
+            }
+
+            .work:hover .layer{
+                height: 100%;
+            }
+
+            .btn{
+                display: block;
+            margin: 50px auto;
+                width: fit-content;
+                border: 1px solid rgb(148, 85, 148);
+                padding: 14px 50px;
+                border-radius: 6px;
+                text-decoration: none;
+                color: #fff;
+                transition:  0.5s;
+            }
+
+            .btn:hover{
+                background: rgb(194, 128, 194);
+            }
+
+        --------------conttact----------------
+            
+        .contact-left p{
+            text-align: center;
+            margin-top: 18px;
+        }
+        .contact-left p i{
+            color:rgb(146, 67, 192);
+            margin-right: 15px;
+            font-size: 25px;
+        }
+    
+        #contact {
+            margin-top: 115px;
+        text-align: center;
+        padding: 7px  10px 10px;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(221, 160, 221, 0.404));    
+        
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;    
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+    .contact-left h1 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        margin: 0 15px;
+        margin-left: 150px;
+        margin-right: 120px;
+        margin-top: 10px;
+        text-decoration: none  ;
+        font-size:  70px;
+        color: white;
+        display: inline-block;
+        transition: transform 0.5s;
+        
+    }
+
+    .social-icons a:hover{
+        color: rgb(146, 67, 192);
+        transform: translateY(-5px);
+    }
+
+        <!----------------blog------------------>
+
+        #blog {
+        padding: 80px 0;
+        
+        }
+
+        .blog-list{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+                grid-gap: 40px;
+                margin-top: 90px;
+            }
+
+            .blogg{
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .blogg img{
+                width: 100%;
+                border-radius: 10px;
+                display: block;
+                transition: transform 0.5s;
+            }
+
+            .blogg:hover img{
+                transform: scale(1.1);
+            }
+
+            .blogg:hover .layer{
+                height: 100%;
+            }
+
+            .top{
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: #9328ad;
+                bottom: 40px;
+                right: 50px;
+                text-decoration: none;
+                text-align: center;
+                line-height: 50px;
+                color: #fff;
+            }
+
+        </style>
+        <script src="https://kit.fontawesome.com/73e9ad9acb.js" crossorigin="anonymous"></script>
+    </head>
+    <body>  
+        <div id="header">       
+        <div class="container">
+        <nav>
+            <img src="Lance.PNG" class="logo">
+            <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">My Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+            <div class="header-text">
+                
+                <h1>Hi, I'm <span>Lance</span><br> From MAWD12-A</h1>
+            </div>
+        </div>      
+        <!------------about--------------->       
+
+        </div>    
+        <div id="about">
+            <div  class="container">
+                <div class="row">   
+                    <div class="about-col-1">   
+                        <img src="abt.jpg" id="pic">
+                    </div>
+                    <div class="about-col-2">
+                    
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hey there! I'm Lance David, a passionate high school senior with a love for mobile and web development. Aspiring to carve my path in the exciting world of technology, I've been immersed
+                        
+                                 in the world of coding and design, exploring the limitless possibilities of turning ideas into digital reality.
+
+
+                    </p>
+
+                    <div class="tab-titles ">
+                        <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'me')">Me</p>
+                        <p class="tab-links" onclick="opentab(event, 'address')">Address</p>
+
+                    
+                    
+                    </div>
+                <div class="tab-contents active-tab" id="skills" >
+                        <ul>
+                            <li><span>UI?UX</span><br>Designing Web/App Interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building app</li>
+                        </ul>
+                </div>
+                <div class="tab-contents" id="me">
+                        <ul>
+                            <li><span>Gender</span><br>Male</li>
+                            <li><span>Age</span><br>17</li>
+                            <li><span>Birthdate</span><br>March 31 2006</li>
+                        </ul>
+                </div>
+                <div class="tab-contents" id="address">
+                        <ul>
+                            <li><span>Country</span><br>Philippines</li>
+                            <li><span>Province</span><br>Pampanga</li>
+                            <li><span>City</span><br>Angeles</li>
+                        </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    <!-------------------portffolio----------------------------->
+        <div id="portfolio">
+                <div class="container">
+                    <h1 class="subtitle">My Projects</h1>
+                    <div class="work-list">
+                        <div class="work"> 
+                            <img src="proj1.PNG">
+                            <div class="layer">
+                                <h3>Student Registration Form</h3>   
+                                <p>It's basically a form that let's you register </p>
+                                    <a href="#"><i class="fa-solid fa-user-secret"></i></a>
+                            </div>
+                        </div>
+                        <div class="work"> 
+                            <img src="proj2.PNG">
+                            <div class="layer">
+                                <h3>Cat game</h3>   
+                                <p>A game where you have to collect fishes that falls from the sky</p>
+                                    <a href="#"><i class="fa-solid fa-user-secret"></i></a>
+                            </div>
+                        </div>
+                        <div class="work"> 
+                            <img src="proj3.jpg">
+                            <div class="layer">
+                                <h3>Planner</h3>   
+                                <p>It's a planner that allows you to add and delete your plans/tasks. All finished task will turn green</p>
+                                    <a href="#"><i class="fa-solid fa-user-secret"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn">See More</a>
+                </div>
+        </div>
+        <!-------------------blog----------------------------->
+
+        <div id="blog">
+            <div class="container"> 
+                <h1 class="subtitle">Blog</h1>
+                <div class="blog-list">
+                    <div class="blogg">
+                        <img src="blog.png" >
+                        <div class="layer">
+                        <h3>Will AI render programming obsolete?</h3>
+                        <a href="https://www.popsci.com/technology/ai-v-programming/"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="blogg">
+                        <img src="blog2.png" >
+                        <div class="layer">
+                        <h3>How video game tech, AI, and computer vision help decode animal pain and behavior</h3>   
+                        <a href="https://www.popsci.com/science/computer-vision-mice-pain-behavior/"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+            <!-------------------contact----------------------------->
+
+            <div id="contact">
+                <div class="container">
+                    <div class="row"> 
+                            <div class="contact-left">
+                                <h1 class="subtitle" >Contact Me</h1>
+                                    <p><i class="fa-solid fa-paper-plane"></i>davidlances0621@gmail.com</p>
+                                    <p><i class="fa-solid fa-square-phone"></i>09631538766</p> 
+                                
+                            </div>
+                            <div class="contact-right">
+                                
+                                <div class="social-icons">     
+                            <!---idk  how to put my profile link--------------> <a href="https://desktop.telegram.org/"><i class="fa-brands fa-telegram"></i></a> 
+                                    
+                                    <a href="https://www.instagram.com/lanceeee_e/"><i class="fa-brands fa-instagram"></i></a>
+                                 <!---idk  how to put my profile link-------------->   <a href="https://discord.com/channels/@mev"><i class="fa-brands fa-discord"></i></a>
+                                    <a href="https://www.facebook.com/vernontatsumi"><i class="fa-brands fa-facebook"></i></a>
+                                </div>
+                                </div>
+                            </div>
+
+                            
+                    </div>
+                </div>
+            </div>
+           
+            <a class="top" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+          
+        
+        <script>
+
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(event, tabname) {
+        for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+            
+            
+        </script>
+        <!------------about--------------->  
+    </body>
+    </html>
